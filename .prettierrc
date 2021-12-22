@@ -1,0 +1,25 @@
+{
+  "printWidth": 100,
+  "semi": true,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "*.(js|mjs)",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ts",
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "*.tsx",
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
+}

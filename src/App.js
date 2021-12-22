@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { memo, Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Layout } from "./containers";
+
+import * as Pages from "./pages";
+
+import "./App.css";
+
+/*
+Главная
+Кто я?
+Что я умею?
+Что я сделал?
+Как со мной связаться?
+
+Home
+Who am I?
+What can I do?
+What have I done?
+How to contact me?
+
+  const { i18n } = useTranslation();
+
+  const handelChange = (evt) => {
+    i18n.changeLanguage(evt.target.value);
+  };
+*/
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Suspense fallback="loading">
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Pages.Home />} />
+            <Route path="about" element={<Pages.About />} />
+            <Route path="contact" element={<Pages.Contact />} />
+          </Routes>
+        </Layout>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default memo(App);

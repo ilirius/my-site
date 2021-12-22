@@ -1,0 +1,15 @@
+{
+  "mainMenu": {
+    "home": "Home",
+    "about": "Who am I?",
+    "contact": "How to contact me?"
+  },
+  "home": {
+    "title": "Personal page of Ivan Gavrilov",
+    "description": "",
+    "article": {
+      "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+      "part2": "Switch language between english and german using buttons above."
+    }
+  }
+}
