@@ -2,7 +2,9 @@
   "mainMenu": {
     "home": "Home",
     "about": "Who am I?",
-    "contact": "How to contact me?"
+    "contact": "How to contact me?",
+    "what_can_i_do": "What can I do?",
+    "my_works": "What have I done?"
   },
   "home": {
     "title": "Personal page of Ivan Gavrilov",

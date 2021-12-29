@@ -1,9 +1,9 @@
 import { memo, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Layout } from "./containers";
+import { Layout } from "containers";
 
-import * as Pages from "./pages";
+import * as Pages from "pages";
 
 import "./App.css";
 
@@ -27,7 +27,7 @@ How to contact me?
   };
 */
 
-function App() {
+let App = () => {
   return (
     <BrowserRouter>
       <Suspense fallback="loading">
@@ -41,6 +41,8 @@ function App() {
       </Suspense>
     </BrowserRouter>
   );
-}
+};
 
-export default memo(App);
+App = memo(App);
+
+export default App;

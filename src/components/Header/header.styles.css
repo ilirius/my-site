@@ -1,0 +1,7 @@
+header {
+  min-height: 70px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

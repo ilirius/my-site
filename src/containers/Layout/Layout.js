@@ -1,10 +1,10 @@
-import { Header } from "../../components";
+import { Header } from "components";
 
 function Layout({ children }) {
   return (
     <>
-      <Header></Header>
-      {children}
+      <Header />
+      <main>{children}</main>
     </>
   );
 }

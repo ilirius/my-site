@@ -1,21 +1,25 @@
 import { useTranslation } from "react-i18next";
 import cx from "classnames";
 
-import styles from "../styles/home.module.css";
+import LayoutBackground from "components/LayoutBackground";
+
+import styles from "styles/home.module.css";
 
 function Home() {
   const { t } = useTranslation();
 
   return (
     <>
-      <div className={cx("app-background", styles.background)}>
-        <div className={styles.cube}></div>
-        <div className={styles.cube}></div>
-        <div className={styles.cube}></div>
-        <div className={styles.cube}></div>
-        <div className={styles.cube}></div>
-        <div className={styles.cube}></div>
-      </div>
+      <LayoutBackground>
+        <div className={cx("app-background", styles.background)}>
+          <div className={styles.cube}></div>
+          <div className={styles.cube}></div>
+          <div className={styles.cube}></div>
+          <div className={styles.cube}></div>
+          <div className={styles.cube}></div>
+          <div className={styles.cube}></div>
+        </div>
+      </LayoutBackground>
       <div className="container">{t("home.title")}</div>
     </>
   );

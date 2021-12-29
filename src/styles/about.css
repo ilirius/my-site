@@ -1,0 +1,75 @@
+.container {
+  color: aliceblue;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.left-blok {
+  /* flex-grow: 0.5; */
+  background-color: rgba(255, 255, 255, 0.116);
+  position: relative;
+  transform: matrix(1, 0, -0.08715, 0.99619, 0, 0);
+  left: -192px;
+  width: calc(50% + 192px);
+  /* animation: all 3s ease-in-out; */
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  /* animation: slideount 0.25s ease-out; */
+  transition: all 0.5s 0.1s ease-in;
+}
+
+.left-blok:hover {
+  /* animation: slidein 0.25s ease-in; */
+  width: calc(58% + 192px);
+}
+
+.left-blok > * {
+  transform: 0 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.right-blok {
+  background-color: rgba(0, 0, 0, 0.3);
+  flex-grow: 0.5;
+  position: relative;
+  /* transform: matrix(1, 0, -0.08715, 0.99619, 0, 0); */
+}
+
+.right-blok * {
+}
+
+@keyframes slidein {
+  0% {
+    width: calc(50% + 192px);
+  }
+  25% {
+    width: calc(57.5% + 192px);
+  }
+  50% {
+    width: calc(65% + 192px);
+  }
+  75% {
+    width: calc(72.5% + 192px);
+  }
+  100% {
+    width: calc(80% + 192px);
+  }
+}
+@keyframes slideount {
+  0% {
+    width: calc(80% + 192px);
+  }
+  /* 25% {
+    width: calc(72.5% + 192px);
+  } */
+  50% {
+    width: calc(65% + 192px);
+  }
+  /* 75% {
+    width: calc(57.5% + 192px);
+  } */
+  100% {
+    width: calc(50% + 192px);
+  }
+}
