@@ -31,13 +31,14 @@ let App = () => {
   return (
     <BrowserRouter>
       <Suspense fallback="loading">
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Pages.Home />} />
-            <Route path="about" element={<Pages.About />} />
-            <Route path="contact" element={<Pages.Contact />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Pages.Home />} />
+            <Route path="about/" element={<Pages.About />} />
+            <Route path="contact/" element={<Pages.Contact />} />
+          </Route>
+          <Route path="*" element={<Pages.NotFount />} />
+        </Routes>
       </Suspense>
     </BrowserRouter>
   );

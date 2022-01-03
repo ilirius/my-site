@@ -1,10 +1,13 @@
+import { Outlet } from "react-router-dom";
 import { Header } from "components";
 
-function Layout({ children }) {
+function Layout() {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
