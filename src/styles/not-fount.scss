@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+
+body {
+  background-color: #111111;
+}
+
+.board {
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+  font: 75px/75px "Monoton", cursive !important;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+  color: red;
+  background-color: #111111;
+}
+
+#error {
+  color: #fff;
+  text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+}
+
+#p404 {
+  margin-top: -50px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
