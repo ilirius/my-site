@@ -36,6 +36,8 @@ let App = () => {
             <Route index element={<Pages.Home />} />
             <Route path="about/" element={<Pages.About />} />
             <Route path="contact/" element={<Pages.Contact />} />
+            <Route path="portfolio/" element={<Pages.Portfolio />} />
+            <Route path="skills/" element={<Pages.Skills />} />
           </Route>
           <Route path="*" element={<Pages.NotFount />} />
         </Routes>
