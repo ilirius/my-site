@@ -6,6 +6,7 @@ import { Layout } from "containers";
 import * as Pages from "pages";
 
 import "./App.css";
+// const Layout = lazy(() => import("./containers/Layout"));
 
 /*
 Главная

@@ -1,15 +1,23 @@
-@import url("https://fonts.googleapis.com/css?family=Monoton");
+// @import url("https://fonts.googleapis.com/css?family=Monoton");
+
+.page_404 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #111111;
+  display: flex;
+  flex-direction: column;
+}
 
 .board {
   width: 500px;
   margin: auto;
   padding: 20px;
-  font: 75px/75px "Monoton", cursive !important;
+  font: 75px/75px "Jura", cursive !important;
+  // font: 75px/75px "Monoton", cursive !important;
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
   color: red;
-  background-color: #111111;
 }
 
 #error {

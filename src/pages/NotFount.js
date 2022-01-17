@@ -6,7 +6,7 @@ import "styles/not-fount.scss";
 
 function NotFount() {
   return (
-    <>
+    <main className="page_404">
       <div className="board">
         <p id="error">error</p>
         <p id="p404">404</p>
@@ -16,7 +16,7 @@ function NotFount() {
       </div>
       <div>(-_-;)・・・</div>
       <div>(o^^)o</div>
-    </>
+    </main>
   );
 }
 

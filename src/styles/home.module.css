@@ -99,6 +99,22 @@ h6 {
   border: 1px solid rgba(51, 51, 51, 0.4);
 }
 
+.empty {
+  display: none;
+  top: -97px;
+  height: 200px;
+  left: 562px;
+  transform: rotate(-34deg);
+  left: 599px;
+  border-right: none;
+}
+
+@media (min-width: 1920px) {
+  .empty {
+    display: block;
+  }
+}
+
 /*-------------------------------------------------------------------
 
                         4. Main Block Styles
@@ -211,14 +227,146 @@ h6 {
   box-sizing: border-box;
 }
 
+.menu_block:hover {
+  border: 15px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.menu_block h2 {
+  position: relative;
+  color: #fff;
+  margin: 50px;
+  font-size: 28px;
+  font-weight: 600;
+  transition: all 1s ease-out;
+}
+
+.menu_block h2::after {
+  position: absolute;
+  content: "";
+  top: -10px;
+  left: -20px;
+  width: 70px;
+  height: 1px;
+  background: #fff;
+  transition: all 0.5s ease;
+}
+
 .menu_block > * {
   display: table-cell;
   vertical-align: middle;
   transform: rotate(34deg);
 }
 
+.menu_block__about,
+.menu_block__portfolio {
+  border-bottom: none;
+}
+
 .menu_block__about {
   height: 300px;
   left: 702px;
   top: -60px;
+}
+
+.menu_block__portfolio {
+  height: 400px;
+  left: 897px;
+  top: 179px;
+  z-index: 1;
+}
+
+.menu_block__skills {
+  height: 300px;
+  left: 1092px;
+  top: 518px;
+}
+
+.menu_block__contact {
+  height: 400px;
+  left: 1391px;
+  top: 138px;
+  border-left: none;
+}
+
+.menu_block__about .block_container {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 150px 0 0 70px;
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .menu_block__about {
+    left: 382px;
+    top: -151px;
+  }
+
+  .menu_block__portfolio {
+    left: 577px;
+    top: 89px;
+  }
+
+  .menu_block__skills {
+    left: 772px;
+    top: 428px;
+  }
+
+  .menu_block__contact {
+    left: 1067px;
+    top: 48px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .menu_block__about {
+    left: 419px;
+    top: -160px;
+    width: 350px;
+    height: 300px;
+  }
+
+  .menu_block__portfolio {
+    left: 586px;
+    top: 88px;
+    width: 350px;
+    height: 300px;
+  }
+
+  .menu_block__skills {
+    left: 753px;
+    top: 335px;
+    width: 350px;
+    height: 300px;
+  }
+
+  .menu_block__contact {
+    left: 900px;
+    top: -70px;
+    width: 350px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1024px) {
+  .menu_block__about {
+    left: 382px;
+    top: -150px;
+  }
+
+  .menu_block__portfolio {
+    left: 577px;
+    top: 89px;
+  }
+
+  .menu_block__skills {
+    left: 772px;
+    top: 428px;
+  }
+
+  .menu_block__contact {
+    left: 365px;
+    top: 538px;
+    border-top: none;
+    border-right: none;
+  }
 }
