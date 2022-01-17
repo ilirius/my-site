@@ -5,7 +5,7 @@ import cx from "classnames";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// import LayoutBackground from "components/LayoutBackground";
+import CSelect from "components/CSelect";
 import styles from "styles/home.module.css";
 
 import cubStylesBg from "styles/cub.background.module.css";
@@ -90,6 +90,13 @@ function Home() {
         </div>
         <div>
           <div className={cx(styles.block_decoration, styles.empty)} />
+          <div className={cx(styles.block_decoration, styles.empty_2)}>
+            {/* <span className={styles.block_container}> */}
+            {/* <h2 className={styles.block_container_item}> */}
+            {/* <CSelect /> */}
+            {/* </h2> */}
+            {/* </span> */}
+          </div>
         </div>
         {/* </div> */}
       </>

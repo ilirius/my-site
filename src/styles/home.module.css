@@ -109,6 +109,24 @@ h6 {
   border-right: none;
 }
 
+.empty_2 {
+  top: 53px;
+  height: 200px;
+  left: 1241px;
+  width: 200px;
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(-34deg);
+}
+
+.empty_2 > * {
+  display: table-cell;
+  vertical-align: middle;
+  transform: rotate(34deg);
+}
+
+/* .empty_2 {} */
+
 @media (min-width: 1920px) {
   .empty {
     display: block;
@@ -252,6 +270,10 @@ h6 {
   transition: all 0.5s ease;
 }
 
+.menu_block:hover h2::after {
+  top: 28px;
+  left: 3px;
+}
 .menu_block > * {
   display: table-cell;
   vertical-align: middle;
@@ -284,7 +306,7 @@ h6 {
 
 .menu_block__contact {
   height: 400px;
-  left: 1391px;
+  left: 1389px;
   top: 138px;
   border-left: none;
 }
@@ -368,5 +390,6 @@ h6 {
     top: 538px;
     border-top: none;
     border-right: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
