@@ -1,11 +1,12 @@
 import { memo, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Layout } from "./containers";
+import { Layout } from "containers";
 
-import * as Pages from "./pages";
+import * as Pages from "pages";
 
 import "./App.css";
+// const Layout = lazy(() => import("./containers/Layout"));
 
 /*
 Главная
@@ -27,20 +28,25 @@ How to contact me?
   };
 */
 
-function App() {
+let App = () => {
   return (
     <BrowserRouter>
       <Suspense fallback="loading">
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Pages.Home />} />
-            <Route path="about" element={<Pages.About />} />
-            <Route path="contact" element={<Pages.Contact />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Pages.Home />} />
+            <Route path="about/" element={<Pages.About />} />
+            <Route path="contact/" element={<Pages.Contact />} />
+            <Route path="portfolio/" element={<Pages.Portfolio />} />
+            <Route path="skills/" element={<Pages.Skills />} />
+          </Route>
+          <Route path="*" element={<Pages.NotFount />} />
+        </Routes>
       </Suspense>
     </BrowserRouter>
   );
-}
+};
 
-export default memo(App);
+App = memo(App);
+
+export default App;

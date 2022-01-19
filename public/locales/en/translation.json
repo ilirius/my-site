@@ -1,14 +1,17 @@
 {
+  "myName": "Ivan Gavrilov",
   "mainMenu": {
     "home": "Home",
     "about": "Who am I?",
-    "contact": "How to contact me?"
+    "contact": "Contact",
+    "skills": "What can I do?",
+    "portfolio": "What have I done?"
   },
   "home": {
     "title": "Personal page of Ivan Gavrilov",
     "description": "",
     "article": {
-      "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+      "part1": "<0>Hi, I'm</0> Ivan Gavrilov",
       "part2": "Switch language between english and german using buttons above."
     }
   }

@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
+import { setConfiguration } from "react-grid-system";
 
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
@@ -8,6 +9,8 @@ import App from "./App";
 
 import "animate.css";
 import "./index.css";
+
+setConfiguration({ maxScreenClass: "xl" });
 
 ReactDOM.render(
   <StrictMode>
