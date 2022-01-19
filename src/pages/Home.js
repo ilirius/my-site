@@ -45,7 +45,7 @@ function Home() {
                   <span>Hi, I'm</span> Ivan Gavrilov
                 </Trans>
               </h1>
-              <h2>Designer &amp; Developer</h2>
+              <h2>Front-End Developer</h2>
             </div>
           </div>
           <div className={styles.menu_blocks}>

@@ -1,0 +1,32 @@
+.bg-contact {
+  background: #364149;
+}
+
+@for $i from 1 through 100 {
+  .div1:nth-child(#{$i}) {
+    position: absolute;
+    transform-style: preserve-3d;
+    perspective: random($i) + px;
+    perspective-origin: -50% random($i) + "px" 200px;
+    transform-origin: "-" + random($i) + "%" 100% 200px;
+    left: random($i + 50) + vw;
+    top: random($i + 50) + vh;
+    opacity: 0.5;
+    box-shadow: 0px 0px 30px random($i) - 10 + px rgb(random(255), random(255), random(255));
+    transition: box-shadow 5s ease-in-out;
+    animation: 10 + random(30) + s crazyBorders ease-in-out infinite;
+  }
+
+  @keyframes crazyBorders {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(random(1000 + $i) + deg) translateX(random($i) + vw);
+    }
+    75% {
+      transform: rotateY(random($i) + deg);
+    }
+  }
+}
