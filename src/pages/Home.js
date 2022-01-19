@@ -1,4 +1,4 @@
-import { Suspense, lazy as RtLazy } from "react";
+import { Suspense, lazy } from "react";
 
 import { useTranslation, Trans } from "react-i18next";
 import cx from "classnames";
@@ -11,7 +11,7 @@ import styles from "styles/home.module.css";
 
 import cubStylesBg from "styles/cub.background.module.css";
 
-const LayoutBackground = RtLazy(() => import("components/LayoutBackground"));
+const LayoutBackground = lazy(() => import("components/LayoutBackground"));
 
 function Home() {
   const { t } = useTranslation();
