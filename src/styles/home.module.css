@@ -87,6 +87,21 @@ h6 {
 
 -------------------------------------------------------------------*/
 
+.content_home {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  background-size: cover;
+  z-index: 0;
+}
+
+@media (max-width: 980px) {
+  .content_home {
+    overflow-y: auto;
+  }
+}
+
 .block_decoration {
   position: absolute;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -110,6 +125,7 @@ h6 {
 }
 
 .empty_2 {
+  display: none;
   top: 53px;
   height: 200px;
   left: 1241px;
@@ -128,7 +144,8 @@ h6 {
 /* .empty_2 {} */
 
 @media (min-width: 1920px) {
-  .empty {
+  .empty,
+  .empty_2 {
     display: block;
   }
 }
@@ -203,29 +220,34 @@ h6 {
     font-size: 22px;
     min-height: 22px;
   }
-  /* .menu2 .name-block {
-    padding: 0 0 0 20px;
-  }
-  .menu2 .mb_container h1 {
-    font-size: 50px;
-  }
-  .menu2 .mb_container h1 span,
-  .menu2 .mb_container h2 {
-    font-size: 26px;
-    min-height: 26px;
-  } */
 }
+
 @media (min-width: 981px) and (max-width: 1024px) {
   .main_block {
     left: -190px;
     top: 10px;
+    width: 640px;
+    height: 640px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 980px) {
+@media (max-width: 980px) {
   .main_block {
-    left: -190px;
-    top: 10px;
+    position: relative;
+    transform: rotate(0deg);
+    width: 100%;
+    height: auto;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    top: 0;
+    left: 0;
+  }
+
+  .mb_container {
+    display: block;
+    transform: rotate(0deg);
+    padding: 30px 0 50px 0;
   }
 }
 
@@ -274,6 +296,7 @@ h6 {
   top: 28px;
   left: 3px;
 }
+
 .menu_block > * {
   display: table-cell;
   vertical-align: middle;
@@ -369,27 +392,83 @@ h6 {
   }
 }
 
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .menu_block__contact {
+    left: 400px;
+    top: 437px;
+    border-top: none;
+    border-right: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
 @media (min-width: 981px) and (max-width: 1024px) {
   .menu_block__about {
-    left: 382px;
-    top: -150px;
+    left: 338px;
+    top: -152px;
   }
 
   .menu_block__portfolio {
-    left: 577px;
+    left: 534px;
     top: 89px;
   }
 
   .menu_block__skills {
-    left: 772px;
+    left: 729px;
     top: 428px;
   }
 
   .menu_block__contact {
-    left: 365px;
-    top: 538px;
+    left: 294px;
+    top: 502px;
     border-top: none;
     border-right: none;
     border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 980px) {
+  .menu_blocks a:last-child .menu_block {
+    border-bottom: none;
+  }
+
+  .menu_block {
+    display: block;
+    position: relative;
+    transform: rotate(0);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    height: auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .menu_block:hover {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .menu_block > * {
+    position: relative;
+    display: block;
+    transform: rotate(0);
+  }
+
+  .menu_block h2 {
+    margin: 0;
+    padding: 50px 25px;
+    font-size: 22px;
+    line-height: 20px;
+  }
+
+  .menu_block h2::after {
+    display: none;
+  }
+
+  .menu_block .block_container {
+    padding: 0;
+    position: relative;
+    display: block;
   }
 }
