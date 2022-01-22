@@ -1,0 +1,76 @@
+@use "sass:math";
+
+.sidebar-block {
+  display: none;
+}
+.sidebar-cal,
+.sidebar-tags,
+.sidebar-summary {
+  display: block;
+}
+
+.tags {
+  overflow: hidden;
+  height: 500px;
+  padding-top: 100px;
+  font-size: 1.5em;
+  line-height: 3px;
+  position: relative;
+  max-height: 254px;
+}
+
+.sidebar-tags dt {
+  display: none;
+}
+
+.tags .comma {
+  display: none;
+}
+
+.tags .tag {
+  animation-name: coloring, tagMove;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  animation-iteration-count: infinite;
+  position: absolute;
+  opacity: 0;
+}
+
+// TODO: подумать на оптимизацией. Останавливать анимацию только если на главном блоке наведена мышь
+// .tags .tag:hover {
+//   animation-play-state: paused;
+// }
+
+@for $i from 1 through 50 {
+  $posX: math.div(random(70) + random(9), 100);
+  .tag:nth-child(#{$i}) {
+    color: #ffd;
+    animation-delay: 1 + random(10) + s;
+    animation-duration: 5 + random(5) + random() + s;
+    // left: ;
+    right: percentage($posX);
+  }
+}
+
+@keyframes tagMove {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 200px;
+  }
+}
+
+@keyframes coloring {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
