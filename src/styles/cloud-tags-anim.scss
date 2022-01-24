@@ -42,10 +42,16 @@
 
 @for $i from 1 through 50 {
   $posX: math.div(random(70) + random(9), 100);
+  $animationDelay: random(6);
+
+  @if $i < 3 {
+    $animationDelay: $i;
+  }
+
   .tag:nth-child(#{$i}) {
     color: #ffd;
-    animation-delay: 1 + random(10) + s;
-    animation-duration: 5 + random(5) + random() + s;
+    animation-delay: $animationDelay + s;
+    animation-duration: 2 + random(9) + random() + s;
     // left: ;
     right: percentage($posX);
   }
@@ -53,7 +59,7 @@
 
 @keyframes tagMove {
   from {
-    top: -100px;
+    top: -60px;
   }
   to {
     top: 200px;

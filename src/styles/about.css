@@ -60,6 +60,7 @@
   transform: rotate(45deg);
   position: relative;
   margin-bottom: 64px;
+  margin-top: 30px;
 }
 
 .avatars__img {
