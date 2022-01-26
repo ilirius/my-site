@@ -3,6 +3,9 @@
   /* background-color: #111111; */
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
+  /* background: url("assets/jpg/3840x2160.jpg") no-repeat center center fixed;
+  background-size: auto;
+  background-size: cover; */
 }
 
 .cube {

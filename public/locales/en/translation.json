@@ -14,5 +14,29 @@
       "part1": "<0>Hi, I'm</0> Ivan Gavrilov",
       "part2": "Switch language between english and german using buttons above."
     }
+  },
+  "about": {
+    "title": "Who am I? | personal page of Ivan Gavrilov",
+    "description": "",
+    "pageHeader": "Who am I?",
+    "article": {
+      "part1": "Я - Front-End Developer из Санкт-Петербурга, Россия.",
+      "part2": "Серьезно увлекаюсь эффектами пользовательского интерфейса, анимацией и созданием интуитивно понятного, динамичного пользовательского интерфейса, а так же люблю интересные и сложные задачи."
+    },
+    "article3": {
+      "part1": "У Вас есть интересный проект? Давайте реализуем его вместе!"
+    },
+    "tags": {
+      "Programming": "Programming",
+      "Cinema": "Cinema",
+      "Graphics": "Graphics",
+      "Cars": "Cars",
+      "Fantasy": "Fantasy",
+      "Fantastic": "Fantastic",
+      "IT": "IT",
+      "Design": "Design",
+      "Photography": "Photography",
+      "Mythology": "Mythology"
+    }
   }
 }

@@ -114,6 +114,11 @@ h6 {
   border: 1px solid rgba(51, 51, 51, 0.4);
 }
 
+.empty,
+.empty_2 {
+  transition: all 0.5s;
+}
+
 .empty {
   display: none;
   top: -97px;
