@@ -10,12 +10,12 @@ function NotFount() {
       <div className="board">
         <p id="error">error</p>
         <p id="p404">404</p>
-      </div>
-      <div>
         <Link to="/">&#8666; go back</Link>
       </div>
-      <div>(-_-;)・・・</div>
-      <div>(o^^)o</div>
+      {/* <div> */}
+      {/* </div> */}
+      {/* <div>(-_-;)・・・</div> */}
+      {/* <div>(o^^)o</div> */}
     </main>
   );
 }

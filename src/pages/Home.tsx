@@ -1,17 +1,16 @@
-import { Suspense, lazy } from "react";
+// import { Suspense, lazy } from "react";
 
 import { useTranslation, Trans } from "react-i18next";
 import cx from "classnames";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Container } from "react-grid-system";
 
 // import CSelect from "components/CSelect";
 import styles from "styles/home.module.css";
 
-import cubStylesBg from "styles/cub.background.module.css";
+// import cubStylesBg from "styles/cub.background.module.css";
 
-const LayoutBackground = lazy(() => import("components/LayoutBackground"));
+// const LayoutBackground = lazy(() => import("components/LayoutBackground"));
 
 function Home() {
   const { t } = useTranslation();
@@ -22,7 +21,7 @@ function Home() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}>
         <LayoutBackground>
           <div className={cx("app-background", cubStylesBg.background)}>
             <div className={cubStylesBg.cube}></div>
@@ -33,10 +32,10 @@ function Home() {
             <div className={cubStylesBg.cube}></div>
           </div>
         </LayoutBackground>
-      </Suspense>
+      </Suspense> */}
       <div className={styles.content_home}>
         <div className={styles.cover_overlay} />
-        <Container fluid>
+        <div>
           {/* <Row> */}
           <div className={cx(styles.block_decoration, styles.main_block)}>
             <div className={styles.mb_container}>
@@ -108,7 +107,7 @@ function Home() {
               {/* </span> */}
             </div>
           </div>
-        </Container>
+        </div>
       </div>
     </>
   );
