@@ -1,0 +1,67 @@
+.portfolio-container {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(-135deg, #9b59b611, #8e44ad11);
+
+  .section-describe {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  //   &::before {
+  //     background: #eeeeee50;
+  //     transform: translateY(-100%) skewY(-175deg);
+  //     display: block;
+  //     content: "";
+  //     width: 100%;
+  //     height: 30px;
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //   }
+
+  .label {
+    &-box {
+      border: 1px solid rgba(51, 51, 51, 0.4);
+      //   border-radius: 15%;
+      width: 220px;
+      //   padding: 25px;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+
+      &:hover {
+        z-index: 5;
+      }
+
+      & > * {
+        transform: rotate(-45deg);
+      }
+
+      & > *:first-child {
+        margin: auto;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &--euroauto {
+        background-color: #fff;
+      }
+
+      &--amtel__club {
+        background-color: #353535;
+      }
+
+      &--metaco__parts {
+        background-color: #222;
+      }
+    }
+  }
+}

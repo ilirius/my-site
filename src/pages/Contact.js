@@ -1,11 +1,11 @@
-import { Suspense, lazy, memo, useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Row, Col } from "react-grid-system";
-import cx from "classnames";
+
+// import cx from "classnames";
 
 import "styles/contact.background.scss";
 
-const LayoutBackground = lazy(() => import("components/LayoutBackground"));
+// const LayoutBackground = lazy(() => import("components/LayoutBackground"));
 
 function Contact() {
   const { t } = useTranslation();
@@ -16,7 +16,7 @@ function Contact() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}>
         <LayoutBackground>
           <div className={cx("app-background", "bg-contact")}>
             {new Array(100).fill(1).map((i, k) => (
@@ -24,15 +24,15 @@ function Contact() {
             ))}
           </div>
         </LayoutBackground>
-      </Suspense>
-      <Container>
+      </Suspense> */}
+      <div>
         <h1 className="block-title">{t("contact.pageHeader")}</h1>
         <article>
-          <Row>
-            <Col>1</Col>
-          </Row>
+          <div>
+            <div>1</div>
+          </div>
         </article>
-      </Container>
+      </div>
     </>
   );
 }

@@ -18,7 +18,7 @@ i18n
       order: [
         'localStorage',
         'sessionStorage',
-        'cookie',
+        // 'cookie',
         // "htmlTag",
       ],
       caches: [

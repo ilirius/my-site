@@ -49,7 +49,7 @@
   }
 
   .tag:nth-child(#{$i}) {
-    color: #ffd;
+    color: #001;
     animation-delay: $animationDelay + s;
     animation-duration: 2 + random(9) + random() + s;
     // left: ;

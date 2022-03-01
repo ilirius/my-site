@@ -12,7 +12,7 @@ const renderWithRouter = (ui: any, { route = '/' } = {}) => {
 };
 
 describe('app router navigating', () => {
-  it('should render the home page', async () => {
+  it('should render the Home page', async () => {
     renderWithRouter(
       <Suspense fallback="test loading">
         <TestRouter />
@@ -22,7 +22,7 @@ describe('app router navigating', () => {
     expect(element).toBeInTheDocument();
   });
 
-  it('should render the about page', async () => {
+  it('should render the About page', async () => {
     renderWithRouter(
       <Suspense fallback="test loading">
         <TestRouter />
@@ -30,8 +30,9 @@ describe('app router navigating', () => {
       { route: '/about' }
     );
 
-    const element = await screen.findByText(/Hi/i);
+    const element = await screen.findByText(/Who am I/i);
     expect(element).toBeInTheDocument();
+    // expect(true).toBe(true);
   });
 
   it('should show No match component for route not defined', async () => {
@@ -42,7 +43,9 @@ describe('app router navigating', () => {
       { route: '/something-that-does-not-match' }
     );
 
-    const element = await screen.findByText(/404/i);
+    let element = await screen.findByText(/404/i);
+    expect(element).toBeInTheDocument();
+    element = await screen.findByText(/go back/i);
     expect(element).toBeInTheDocument();
   });
 });
