@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "atomic-design-integration": {
+      "source": "thebushidocollective/han",
+      "sourceType": "github",
+      "skillPath": "plugins/patterns/atomic-design/skills/atomic-design-integration/SKILL.md",
+      "computedHash": "c612fd1ffaddab909f5da5dbcd87a408948ad225ad840222c10aa5d49f46f0e1"
+    },
+    "atomic-design-quarks": {
+      "source": "thebushidocollective/han",
+      "sourceType": "github",
+      "skillPath": "plugins/patterns/atomic-design/skills/atomic-design-quarks/SKILL.md",
+      "computedHash": "df3c912650c2ac03cf9aeedbe2a118ad2e65175245aed14a174c21afd8d964e2"
+    },
+    "feature-sliced-design": {
+      "source": "feature-sliced/skills",
+      "sourceType": "github",
+      "skillPath": "feature-sliced-design/SKILL.md",
+      "computedHash": "775a8ee42f32b12d33478eaf2416c0c1c394fac61b98805c6cf0f228cc2c9b34"
+    },
+    "grill-me": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/productivity/grill-me/SKILL.md",
+      "computedHash": "f361db4e15e6bfd562a9282b1dccda513910a50061f9e838ce017be9c69dde3f"
+    }
+  }
+}

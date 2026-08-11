@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 
-// import { Header } from "components";
+// import { Header } from "~/components";
 
-function Layout() {
+const Layout: React.FC = () => {
   //  <Header />
   return (
     <main>

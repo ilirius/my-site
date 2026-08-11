@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
+  "description": "Проверки орфографии в сторонних редакторах с использованием плагина cspell",
+  "dictionaries": ["ru", "en", "ru-ru", "en-us", "html", "css", "typescript", "node", "softwareTerms"],
+  "language": "ru,en,ru-RU,en-US",
+  "ignorePaths": ["node_modules/**", ".next/**", "./cspell.json", "**/*.svg"],
+  "words": [
+    "classnames",
+    "clickmap",
+    "figcaption",
+    "glava",
+    "jost",
+    "lerp",
+    "mdash",
+    "nbsp",
+    "preprod",
+    "specialprojects",
+    "TACC",
+    "unspaced",
+    "webkitbeginfullscreen",
+    "webp",
+    "webvisor",
+    "рассинхрон",
+    "Yury",
+    "sputnix"
+  ],
+  "patterns": [
+    {
+      "name": "мобилка",
+      "pattern": "/мобил(ка|ки|ке|ку|кой)/g"
+    },
+    {
+      "name": "локальныеТермины-M-PL",
+      "pattern": "/(стейт|обзервер|плейсхолдер|рендер|свайп|скролл?|ресайз|айфон|ховер|бандл|лейаут|роут|брекпоинт|медиазапрос|сниппет|препрод|лодер|ассет|лейбл|автозапуск)(а|у|ом|е|ы|ам|ами|ов|ах)?/ig"
+    },
+    {
+      "name": "локальныеТермины-M-PL2",
+      "pattern": "/(фоллбек|коллбек)(а|у|ом|е|и|ам|ами|ов|ах)?/ig"
+    },
+    {
+      "name": "локальныеТермины-M-PL3",
+      "pattern": "/(слеш)(а|у|ем|е|и|ам|ами|ей|ах)?/ig"
+    },
+    {
+      "name": "локальныеТермины",
+      "pattern": "/(некст|вьюпорт|десктоп|интро)(а|у|ом|е)?/ig"
+    },
+    {
+      "name": "локальныеТермины-F1",
+      "pattern": "/(гидраци|верификаци|деструктуризаци|транспиляци)(я|и|ю|ей)/ig"
+    },
+    {
+      "name": "локаль",
+      "pattern": "/(локал)(изац(ия|и|ю|ей|й|ями|ях)|ь|и|ью|ей|ям|ями|ях|)/ig"
+    }
+  ],
+  "ignoreRegExpList": [
+    "мобилка",
+    "локальныеТермины",
+    "локальныеТермины-M-PL",
+    "локальныеТермины-M-PL2",
+    "локальныеТермины-M-PL3",
+    "локальныеТермины-F1",
+    "локаль"
+  ]
+}

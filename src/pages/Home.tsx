@@ -1,17 +1,17 @@
+import { useEffect } from 'react';
 // import { Suspense, lazy } from "react";
-
 import { useTranslation, Trans } from 'react-i18next';
 import cx from 'classnames';
-import { useEffect } from 'react';
+
 // import { Link } from 'react-router-dom';
 
-import { ReactComponent as SelectLangRu } from 'assets/svg/ru.svg';
-import { ReactComponent as ThemeLightModeIcon } from 'assets/svg/wb_sunny_black_24dp.svg';
-import { ReactComponent as ThemeDarkModeIcon } from 'assets/svg/dark_mode_black_24dp.svg';
+import SelectLangRu from '~/assets/svg/ru.svg';
+import ThemeLightModeIcon from '~/assets/svg/wb_sunny_black_24dp.svg';
+import ThemeDarkModeIcon from '~/assets/svg/dark_mode_black_24dp.svg';
 
 // import CSelect from "components/CSelect";
 // -----
-import 'styles/MainSection.scss';
+import '~/styles/MainSection.scss';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -37,16 +37,16 @@ const Home: React.FC = () => {
         </div>
         <div className="menu">
           <div className={cx('menu-item', 'menu-item--about')}>
-            <h2>{t('mainMenu.about')}</h2>
+            {/* <h2>{t('mainMenu.about')}</h2> */}
           </div>
           <div className={cx('menu-item', 'menu-item--portfolio')}>
-            <h2>{t('mainMenu.portfolio')}</h2>
+            {/* <h2>{t('mainMenu.portfolio')}</h2> */}
           </div>
           <div className={cx('menu-item', 'menu-item--skills')}>
-            <h2>{t('mainMenu.skills')}</h2>
+            {/* <h2>{t('mainMenu.skills')}</h2> */}
           </div>
           <div className={cx('menu-item', 'menu-item--contact')}>
-            <h2>{t('mainMenu.contact')}</h2>
+            {/* <h2>{t('mainMenu.contact')}</h2> */}
           </div>
         </div>
         <div className="menu-tools">

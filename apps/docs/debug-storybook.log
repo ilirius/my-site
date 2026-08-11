@@ -1,0 +1,43 @@
+[12:18:48.128] [INFO] storybook v10.5.7
+[12:18:49.412] [DEBUG] Getting package.json info for /home/gavrilov_i/.UserData/Documents/Development/ME/my-site/apps/docs/package.json...
+[12:18:49.414] [WARN] You are currently using Storybook 10.5.7 but you have packages which are incompatible with it:
+
+- @storybook/addon-essentials@8.6.18 which depends on 8.6.18
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/addons/essentials
+- @storybook/addon-interactions@8.6.14 which depends on 8.6.14
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/addons/interactions
+- @storybook/blocks@8.6.14 which depends on ^8.6.14
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/lib/blocks
+- @storybook/test@8.6.15 which depends on 8.6.15
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/lib/test
+
+Please consider updating your packages or contacting the maintainers for compatibility details.
+
+For more details on compatibility guidance, see:
+https://github.com/storybookjs/storybook/issues/32836
+[12:18:49.943] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
+[12:18:50.283] [WARN] No story files found for the specified pattern: src/**/*.mdx
+[12:18:50.324] [INFO] Starting...
+[12:18:50.330] [DEBUG] readDependencyManifest: could not resolve "@repo/ui"
+[12:18:50.330] [DEBUG] readDependencyManifest: could not resolve "@repo/eslint-config"
+[12:18:50.460] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0004 (NoMatchingExportError): There was an exports mismatch error when trying to build Storybook.
+Please check whether the versions of your Storybook packages match whenever possible, as this might be the cause.
+
+Problematic example:
+{ "@storybook/react": "7.5.3", "@storybook/react-vite": "7.4.5", "storybook": "7.3.0" }
+
+Correct example:
+{ "@storybook/react": "7.5.3", "@storybook/react-vite": "7.5.3", "storybook": "7.5.3" }
+
+Please run `npx storybook doctor` for guidance on how to fix this issue.
+
+More info: 
+[39m
+    at buildOrThrow (file:///home/gavrilov_i/.UserData/Documents/Development/ME/my-site/node_modules/.pnpm/storybook@10.5.7_@types+react@19.2.2_react@19.2.8/node_modules/storybook/dist/core-server/index.js:8336:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async buildDevStandalone (file:///home/gavrilov_i/.UserData/Documents/Development/ME/my-site/node_modules/.pnpm/storybook@10.5.7_@types+react@19.2.2_react@19.2.8/node_modules/storybook/dist/core-server/index.js:11990:41)
+    at async withTelemetry (file:///home/gavrilov_i/.UserData/Documents/Development/ME/my-site/node_modules/.pnpm/storybook@10.5.7_@types+react@19.2.2_react@19.2.8/node_modules/storybook/dist/_node-chunks/chunk-XYZ5NBEV.js:1785:12)
+    at async dev (file:///home/gavrilov_i/.UserData/Documents/Development/ME/my-site/node_modules/.pnpm/storybook@10.5.7_@types+react@19.2.2_react@19.2.8/node_modules/storybook/dist/bin/core.js:3850:3)
+    at async _Command.<anonymous> (file:///home/gavrilov_i/.UserData/Documents/Development/ME/my-site/node_modules/.pnpm/storybook@10.5.7_@types+react@19.2.2_react@19.2.8/node_modules/storybook/dist/bin/core.js:3958:3)
+[12:18:50.466] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.

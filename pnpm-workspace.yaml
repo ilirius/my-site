@@ -1,0 +1,11 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+allowBuilds:
+  '@fission-ai/openspec': false
+  '@google/genai': set this to true or false
+  core-js-pure: true
+  esbuild: true
+  protobufjs: set this to true or false
+  sharp: true

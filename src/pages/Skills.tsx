@@ -1,6 +1,7 @@
-import git from 'assets/png/git.png';
-import sketch from 'assets/png/sketch.png';
-import vscode from 'assets/png/vscode.png';
+import { JSX } from 'react';
+import git from 'src/assets/png/git.png';
+import sketch from 'src/assets/png/sketch.png';
+import vscode from 'src/assets/png/vscode.png';
 
 const Skills: React.FC<{}> = (): JSX.Element => (
   <div>
@@ -17,4 +18,4 @@ const Skills: React.FC<{}> = (): JSX.Element => (
   </div>
 );
 
-export default Skills;
+export default Skills; 

@@ -1,25 +1,25 @@
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+// import { setConfiguration } from "react-grid-system";
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from '~/app';
+import reportWebVitals from '~/utils/reportWebVitals';
 
-import 'i18n';
+import "./i18n";
 
 import 'reset.css';
 
-import './index.css';
+// setConfiguration({ maxScreenClass: "xl" });
 
-ReactDOM.render(
+// Render your React component instead
+const root = createRoot(document.getElementById('root') as HTMLElement);
+
+root.render(
   <React.StrictMode>
-    <BrowserRouter>
       <Suspense fallback="loading">
         <App />
       </Suspense>
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
