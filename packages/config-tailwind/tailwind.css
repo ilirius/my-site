@@ -1,0 +1,213 @@
+/**
+ * Tailwind CSS v4 Theme — "Ventura Mono"
+ *
+ * Generated from Google Stitch "Atomic macOS Developer Portfolio"
+ * Project: projects/17570780041700440538
+ *
+ * Tailwind v4 uses CSS-based configuration via @theme.
+ * This file is consumed by the app's globals.css via:
+ *   @import "@repo/config-tailwind/tailwind.css";
+ */
+
+@import "tailwindcss";
+
+/* ─── CUSTOM THEME (Stitch Design Tokens → Tailwind v4) ─── */
+@theme {
+  /* ─── FONTS ─── */
+  --font-sans: "Hanken Grotesk", "Inter", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+
+  /* ─── PRIMARY (macOS Accent #0a84ff) ─── */
+  --color-primary: #aac7ff;
+  --color-primary-container: #3e90ff;
+  --color-primary-fixed: #d6e3ff;
+  --color-primary-fixed-dim: #aac7ff;
+  --color-primary-on: #003064;
+  --color-primary-on-container: #002957;
+  --color-primary-on-fixed: #001b3e;
+  --color-primary-on-fixed-variant: #00468d;
+  --color-primary-inverse: #005db8;
+  --color-primary-accent: #0a84ff;
+
+  /* ─── SECONDARY (#5e5ce6) ─── */
+  --color-secondary: #c2c1ff;
+  --color-secondary-container: #3630bf;
+  --color-secondary-fixed: #e2dfff;
+  --color-secondary-fixed-dim: #c2c1ff;
+  --color-secondary-on: #1800a7;
+  --color-secondary-on-container: #b1b1ff;
+  --color-secondary-on-fixed: #0c006b;
+  --color-secondary-on-fixed-variant: #332dbc;
+
+  /* ─── TERTIARY (#ffb691) ─── */
+  --color-tertiary: #ffb691;
+  --color-tertiary-container: #eb6a12;
+  --color-tertiary-fixed: #ffdbcb;
+  --color-tertiary-fixed-dim: #ffb691;
+  --color-tertiary-on: #552000;
+  --color-tertiary-on-container: #4a1b00;
+  --color-tertiary-on-fixed: #341100;
+  --color-tertiary-on-fixed-variant: #793100;
+
+  /* ─── ERROR ─── */
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-error-on: #690005;
+  --color-error-on-container: #ffdad6;
+
+  /* ─── SURFACE (Dark 8-step elevation ramp) ─── */
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #393939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1b1b1c;
+  --color-surface-container: #202020;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353535;
+  --color-surface-variant: #353535;
+  --color-surface-tint: #aac7ff;
+  --color-surface-on: #e5e2e1;
+  --color-surface-on-variant: #c0c6d6;
+  --color-surface-inverse: #e5e2e1;
+  --color-surface-inverse-on: #303030;
+
+  /* ─── OUTLINE ─── */
+  --color-outline: #8b91a0;
+  --color-outline-variant: #414754;
+
+  /* ─── GLASSMORPHISM ─── */
+  --color-glass-white: rgba(255, 255, 255, 0.1);
+  --color-glass-black: rgba(0, 0, 0, 0.05);
+  --color-glass-accent: rgba(10, 132, 255, 0.15);
+
+  /* ─── BORDER RADIUS (ROUND_EIGHT) ─── */
+  --radius-sm: 0.25rem;
+  --radius-default: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  /* ─── SHADOWS ─── */
+  --shadow-glow-primary: 0 0 40px 0 rgba(10, 132, 255, 0.15);
+  --shadow-glow-secondary: 0 0 40px 0 rgba(94, 92, 230, 0.15);
+  --shadow-modal: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-magnetic: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-inner-bevel: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+  /* ─── SPACING (8px atomic grid) ─── */
+  --spacing-xs: 4px;
+  --spacing-sm: 12px;
+  --spacing-base: 8px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 80px;
+  --spacing-gutter: 24px;
+  --spacing-margin: 32px;
+  --container-max-width: 1200px;
+
+  /* ─── TRANSITIONS ("Buttery" 400ms) ─── */
+  --duration-fast: 200ms;
+  --duration-default: 400ms;
+  --duration-slow: 600ms;
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ─── KEYFRAMES ─── */
+@keyframes magnetic-lift {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 0 0 0 rgba(10, 132, 255, 0);
+  }
+  100% {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px 0 rgba(10, 132, 255, 0.15);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── ANIMATION UTILITIES ─── */
+@utility animate-magnetic-lift {
+  animation: magnetic-lift 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@utility animate-scan-line {
+  animation: scan-line 2s ease-in-out infinite;
+}
+
+@utility animate-fade-in {
+  animation: fade-in 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ─── GLASSMORPHIC BENTO CARD ─── */
+@utility glass-card {
+  background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-glass-white);
+  border-radius: var(--radius-xl);
+}
+
+/* ─── GLASS BUTTON ─── */
+@utility glass-button {
+  background-color: var(--color-primary-accent);
+  color: white;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: all var(--duration-default) var(--ease-in-out);
+}
+
+@utility glass-button-hover {
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow-primary);
+  }
+}
+
+/* ─── MACOS TOGGLE TRACK ─── */
+@utility toggle-track {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-container-high);
+  transition: background-color var(--duration-fast) var(--ease-in-out);
+}
+
+/* ─── PILL / TAG ─── */
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-glass-accent);
+  color: var(--color-primary-accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}

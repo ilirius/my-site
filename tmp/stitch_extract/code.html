@@ -1,0 +1,356 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Alex Dev - Senior Full-Stack Architect</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-primary": "#005db8",
+                        "secondary-fixed": "#e2dfff",
+                        "on-surface-variant": "#c0c6d6",
+                        "surface": "#131313",
+                        "primary": "#aac7ff",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-variant": "#353535",
+                        "on-secondary-fixed-variant": "#332dbc",
+                        "secondary-fixed-dim": "#c2c1ff",
+                        "surface-container-low": "#1b1b1c",
+                        "on-tertiary": "#552000",
+                        "error-container": "#93000a",
+                        "on-background": "#e5e2e1",
+                        "surface-bright": "#393939",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "background": "#131313",
+                        "on-primary-fixed": "#001b3e",
+                        "surface-tint": "#aac7ff",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#414754",
+                        "on-primary-container": "#002957",
+                        "secondary": "#c2c1ff",
+                        "on-secondary": "#1800a7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#3e90ff",
+                        "tertiary": "#ffb691",
+                        "inverse-on-surface": "#303030",
+                        "on-primary-fixed-variant": "#00468d",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-container-highest": "#353535",
+                        "outline": "#8b91a0",
+                        "tertiary-container": "#eb6a12",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary": "#003064",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#0c006b",
+                        "secondary-container": "#3630bf",
+                        "primary-fixed-dim": "#aac7ff",
+                        "on-secondary-container": "#b1b1ff",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#4a1b00",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#202020",
+                        "on-tertiary-fixed": "#341100",
+                        "on-tertiary-fixed-variant": "#793100"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-safe": "40px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "bento-gap": "16px",
+                        "max-width": "1200px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Hanken Grotesk"],
+                        "code-label": ["JetBrains Mono"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "code-label": ["13px", { lineHeight: "1.0", fontWeight: "500" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg-mobile": ["38px", { lineHeight: "1.2", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { scroll-behavior: smooth; }
+        .magnetic { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .bento-card {
+            background: rgba(42, 42, 42, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(170, 199, 255, 0.2);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+        }
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        /* Radial glow tracker effect */
+        #radial-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(170, 199, 255, 0.03), transparent 40%);
+            mix-blend-mode: screen;
+        }
+        
+        /* Language Toggle Animation */
+        .lang-switch {
+            position: relative;
+            display: flex;
+            background: rgba(255,255,255,0.05);
+            border-radius: 9999px;
+            padding: 2px;
+        }
+        .lang-indicator {
+            position: absolute;
+            height: calc(100% - 4px);
+            width: 50%;
+            background: var(--color-primary, #aac7ff);
+            border-radius: 9999px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+        .lang-btn {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            text-align: center;
+            padding: 4px 12px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        [data-lang="ru"] .lang-indicator { transform: translateX(100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg antialiased overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+<div id="radial-glow" style="--x: 964px; --y: 1014px;"></div>
+<div class="flex flex-col md:flex-row min-h-screen max-w-[1400px] mx-auto relative">
+<!-- Left Sidebar (Fixed on Desktop) -->
+<aside class="md:fixed md:left-0 md:top-0 md:h-screen md:w-1/3 bg-surface/80 backdrop-blur-xl border-r border-outline-variant/10 z-50 flex flex-col justify-between p-margin-safe transition-transform duration-500 max-md:h-auto max-md:relative max-md:w-full max-md:border-b max-md:border-r-0">
+<div class="flex flex-col gap-6">
+<!-- Header / Profile -->
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface mb-2" data-i18n="name">Alex Dev</h1>
+<h2 class="font-body-lg text-body-lg text-primary font-medium mb-4" data-i18n="title">Senior Full-Stack Architect</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs" data-i18n="bio">
+                        Crafting high-performance digital experiences. Specializing in Turborepo, Next.js, and highly scalable design systems.
+                    </p>
+</div>
+<!-- Navigation -->
+<nav aria-label="Main Navigation" class="mt-8">
+<ul class="flex flex-row md:flex-col w-full justify-around md:justify-start gap-2 flex-grow">
+<!-- About (Active) -->
+<li class="w-full md:w-auto">
+<a class="magnetic-wrap w-full flex items-center justify-center md:justify-start gap-4 px-4 py-3 rounded-xl text-primary font-bold bg-secondary-container/20 active hover:translate-y-[-2px] transition-all duration-300" href="#about">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="hidden md:inline font-label-mono text-label-mono uppercase tracking-wider">About</span>
+</a>
+</li>
+<!-- Experience -->
+<li class="w-full md:w-auto">
+<a class="magnetic-wrap w-full flex items-center justify-center md:justify-start gap-4 px-4 py-3 rounded-xl text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:translate-y-[-2px] transition-all duration-300" href="#experience">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">work</span>
+<span class="hidden md:inline font-label-mono text-label-mono uppercase tracking-wider">Experience</span>
+</a>
+</li>
+<!-- Projects -->
+<li class="w-full md:w-auto">
+<a class="magnetic-wrap w-full flex items-center justify-center md:justify-start gap-4 px-4 py-3 rounded-xl text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:translate-y-[-2px] transition-all duration-300" href="#projects">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">grid_view</span>
+<span class="hidden md:inline font-label-mono text-label-mono uppercase tracking-wider">Projects</span>
+</a>
+</li>
+<!-- Stack -->
+<li class="w-full md:w-auto">
+<a class="magnetic-wrap w-full flex items-center justify-center md:justify-start gap-4 px-4 py-3 rounded-xl text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:translate-y-[-2px] transition-all duration-300" href="#stack">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">code</span>
+<span class="hidden md:inline font-label-mono text-label-mono uppercase tracking-wider">Stack</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<!-- Footer / Toggles -->
+<div class="flex flex-col gap-6 mt-12 md:mt-0">
+<!-- Action Buttons -->
+<button class="magnetic glass-btn px-6 py-3 rounded-full flex items-center justify-center gap-2 text-on-surface hover:text-primary hover:border-primary/50 transition-colors w-fit">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="font-body-sm text-body-sm font-medium" data-i18n="download_cv">Download CV</span>
+</button>
+<!-- Toggles & Socials -->
+<div class="flex items-center gap-6">
+<!-- Language Switcher -->
+<div class="lang-switch w-24 h-8" id="langToggle">
+<div class="lang-indicator"></div>
+<div class="lang-btn font-code-label text-code-label text-background font-bold" data-lang-target="en">EN</div>
+<div class="lang-btn font-code-label text-code-label text-on-surface-variant hover:text-on-surface" data-lang-target="ru">RU</div>
+</div>
+<!-- Theme Toggle (Simplified representation) -->
+<button aria-label="Toggle Theme" class="text-on-surface-variant hover:text-primary transition-colors magnetic">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+<!-- Socials -->
+<div class="flex gap-4">
+<a aria-label="GitHub" class="text-on-surface-variant hover:text-primary transition-colors magnetic" href="#">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a aria-label="LinkedIn" class="text-on-surface-variant hover:text-primary transition-colors magnetic" href="#">
+<span class="material-symbols-outlined">work</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Main Content -->
+<main class="md:ml-[33.333333%] w-full md:w-2/3 p-margin-safe xl:px-24 xl:py-24">
+<!-- About Section -->
+<section class="mb-32 scroll-mt-24" id="about">
+<div class="font-body-lg text-body-lg text-on-surface-variant space-y-6 leading-relaxed">
+<p data-i18n="about_p1" class="">
+                        Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I’ve had the privilege of building software for an advertising agency, a start-up, a huge corporation, and a student-led design studio.
+                    </p>
+<p data-i18n="about_p2" class="">
+                        My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients. I specialize in modern monorepo architectures using <strong class="text-on-surface font-semibold">Turborepo</strong>, and delivering high-performance edge-rendered applications with <strong class="text-on-surface font-semibold">Next.js</strong>.
+                    </p>
+<p data-i18n="about_p3" class="">
+                        When I'm not at the computer, I'm usually hanging out with my wife and two cats, reading, or running around hyrule searching for korok seeds.
+                    </p>
+</div>
+</section>
+<!-- Footer (from JSON) -->
+<footer class="mt-32 w-full py-unit flex justify-between items-center opacity-60 border-t border-outline-variant/10 pt-8">
+<p class="font-code-label text-code-label text-secondary" data-i18n="copyright">© 2024 Built with precision.</p>
+<div class="flex gap-4">
+<a class="font-code-label text-code-label text-outline hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="font-code-label text-code-label text-outline hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-code-label text-code-label text-outline hover:text-primary transition-colors" href="#">Twitter</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Scripts -->
+<script>
+        // Magnetic effect for buttons
+        document.querySelectorAll('.magnetic').forEach(elem => {
+            elem.addEventListener('mousemove', (e) => {
+                const rect = elem.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                elem.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.05)`;
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.style.transform = 'translate(0, 0) scale(1)';
+            });
+        });
+
+        // Radial glow tracker
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('radial-glow');
+            glow.style.setProperty('--x', `${e.clientX}px`);
+            glow.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        // Intersection Observer for Nav Highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Initial active state based on hash or first item
+        if(window.location.hash) {
+             const activeLink = document.querySelector(`.nav-link[href="${window.location.hash}"]`);
+             if(activeLink) activeLink.classList.add('active');
+        } else if (navLinks.length > 0) {
+            navLinks[0].classList.add('active');
+        }
+
+
+        // Language Toggle Logic (Mock)
+        const langToggle = document.getElementById('langToggle');
+        const btns = langToggle.querySelectorAll('.lang-btn');
+        let currentLang = 'en';
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const targetLang = e.target.getAttribute('data-lang-target');
+                if(targetLang === currentLang) return;
+                
+                langToggle.setAttribute('data-lang', targetLang);
+                currentLang = targetLang;
+                
+                // Update button text colors
+                btns.forEach(b => {
+                    if(b.getAttribute('data-lang-target') === currentLang) {
+                        b.classList.remove('text-on-surface-variant', 'hover:text-on-surface');
+                        b.classList.add('text-background');
+                    } else {
+                        b.classList.add('text-on-surface-variant', 'hover:text-on-surface');
+                        b.classList.remove('text-background');
+                    }
+                });
+
+                // Here you would typically trigger your i18n translation function
+                console.log(`Language switched to: ${currentLang}`);
+            });
+        });
+    </script>
+
+
+</body></html>

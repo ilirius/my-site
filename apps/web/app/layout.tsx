@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { WebVitals } from "@/src/features/web-vitals";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
 
 export const metadata: Metadata = {
   title: "Pixel & Code",
@@ -23,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ru" className="dark">
+      <body>
         <WebVitals />
         {children}
       </body>

@@ -1,0 +1,14 @@
+{
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.git/**",
+    "**/.venv/**"
+  ],
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 16384,
+    "keepRecentTokens": 50000
+  }
+}

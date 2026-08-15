@@ -10,6 +10,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@repo/config-tailwind": "workspace:*",
     "@repo/ui": "workspace:*",
     "next": "16.3.0",
     "react": "^19.2.0",
@@ -18,13 +19,15 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@storybook/nextjs": "^10.5.7",
+    "@storybook/react": "^10.5.7",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.1",
-    "@storybook/nextjs": "^10.5.7",
-    "@storybook/react": "^10.5.7",
     "storybook": "^10.5.7",
+    "tailwindcss": "^4.3.3",
     "typescript": "5.9.2"
   }
 }

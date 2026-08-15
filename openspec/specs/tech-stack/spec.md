@@ -33,14 +33,32 @@
 - **WHEN** разработчик запускает `tsc --noEmit`
 - **THEN** все файлы проходят проверку типов без ошибок
 
-### Requirement: SCSS и CSS Modules
+### Requirement: Tailwind CSS v4
 
-Стилизация SHALL осуществляться через SCSS (глобальные стили) и CSS Modules (компонентные стили).
+Стилизация SHALL осуществляться через Tailwind CSS v4 с плагином `@tailwindcss/postcss`.
 
 #### Scenario: Импорт стилей в компоненте
 
-- **WHEN** компонент импортирует `.module.css` или `.scss` файл
-- **THEN** стили применяются изолированно (CSS Modules) или глобально (SCSS)
+- **WHEN** компонент использует утилитарные классы Tailwind
+- **THEN** классы генерируются из `@theme` токенов Ventura Mono
+
+### Requirement: Общий пакет конфигурации Tailwind
+
+Дизайн-токены SHALL храниться в общем пакете `packages/config-tailwind` (файлы `tailwind.config.js` и `tailwind.css`), переиспользуемом приложениями `apps/web` и `apps/docs`.
+
+#### Scenario: Переиспользование токенов
+
+- **WHEN** приложение `apps/web` или `apps/docs` импортирует `@repo/config-tailwind/tailwind.css`
+- **THEN** применяются токены Ventura Mono (цвета, шрифты, скругления, spacing)
+
+### Requirement: Дизайн-система Stitch
+
+Источником дизайн-токенов SHALL служить Google Stitch Design System "Silicon Desktop" (проект "Atomic macOS Developer Portfolio").
+
+#### Scenario: Получение токенов
+
+- **WHEN** требуется определить значение дизайн-токена
+- **THEN** токен читается из дизайн-манифеста Stitch через MCP (Material-цвета, типографика, скругления, spacing)
 
 ### Requirement: i18next для интернационализации
 

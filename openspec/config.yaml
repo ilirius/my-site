@@ -3,11 +3,68 @@ schema: spec-driven
 # Project context (optional)
 # This is shown to AI when creating artifacts.
 # Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+context: |
+  **Pixel & Code** — персональный сайт-портфолио Front-End разработчика Ивана Гаврилова.
+
+  ## Технический стек
+  - Монорепо: Turborepo + pnpm workspaces
+  - Приложение портфолио: Next.js 16 (SSG как SPA, одна страница с якорными секциями: Hero, About, Skills, Portfolio, Contact)
+  - Документация компонентов: Storybook в apps/docs (с @storybook/nextjs)
+  - Язык: TypeScript 5 (strict: true)
+  - UI: React 19
+  - Стили: Tailwind CSS v4 + токены Ventura Mono (packages/config-tailwind)
+  - Интернационализация: i18next, react-i18next, i18next-http-backend, i18next-browser-languagedetector
+  - Линтинг: ESLint 9, Prettier, cspell
+  - Пакетный менеджер: pnpm 11
+  - Node.js: >= 18
+  - Целевые браузеры: >0.2%, not dead, not op_mini all (production), last 1 chrome/firefox/safari (dev)
+  - Корневые скрипты: website:dev, website:build, docs:dev, docs:build (через turbo --filter)
+  - Мониторинг: Web Vitals через useReportWebVitals → sendBeacon → /api/vitals
+
+  ## Архитектура
+  - Монорепо: apps/web, apps/docs, packages/ui, packages/eslint-config, packages/typescript-config
+  - apps/web: Feature-Sliced Design (app → pages → widgets → features → entities → shared)
+  - packages/ui (@repo/ui): Atomic Design (atoms → molecules → organisms)
+  - Граница: widgets в apps/web используют organisms из @repo/ui
+  - Колокация стилей (Tailwind-классы рядом с компонентами)
+  - src/ — наследие CRA, референс для миграции
+  - public/locales/{ru,en}/translation.json — файлы переводов (цель i18next)
+
+  ## Роутинг
+  - Next.js App Router. Единственный маршрут: / (app/page.tsx)
+  - Секции: Hero, #about, #skills, #portfolio, #contact
+  - Якорная навигация с плавным скроллом (scroll-behavior: smooth, History API)
+  - 404: кастомная страница not-found
+
+  ## Интернационализация
+  - Языки: русский (ru), английский (en)
+  - Автоопределение: localStorage (i18nextLng) → sessionStorage → fallback ru
+  - UI-переключатель: macOS-toggle (атом из @repo/ui) RU/EN
+  - В Storybook: локальный I18nContext (заглушка, не зависящая от i18next)
+  - Поддержка <Trans> для HTML-разметки в переводах
+
+  ## Темы
+  - Dark (по умолчанию) / Light — соответствует манифесту Stitch "Silicon Desktop"
+  - Переключение через CSS-класс .dark на html
+  - CSS-селекторы: .dark + color-scheme: dark/light
+  - UI: macOS-toggle (pill-трек + круглый thumb, spring-анимация)
+
+  ## План миграции (src/ → apps/web/)
+  1. Создать каркас SPA с секциями-заглушками и якорной навигацией
+  2. Hero
+  3. About
+  4. Skills
+  5. Portfolio
+  6. Contact
+  + Перенос i18n: public/locales/ → apps/web/public/locales/
+  + Перенос стилей на Tailwind CSS v4 (токены Ventura Mono)
+  + Исключить CRA-артефакты (setupTests.ts, reportWebVitals, public/index.html)
+  - После завершения: src/ удаляется
+
+  ## Конвенции
+  - Язык взаимодействия с AI: русский (английский только для терминов без аналогов: SSG, PR, workspace и т.п.)
+  - Коммиты: conventional commits
+  - Проверка перед PR: pnpm check-types, pnpm lint, pnpm website:build
 
 # Per-artifact rules (optional)
 # Add custom rules for specific artifacts.

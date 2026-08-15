@@ -71,18 +71,25 @@
 
 ### Requirement: Перенос стилей
 
-Стили из `src/styles/` SHALL быть перенесены в соответствующие FSD-слои внутри `apps/web/` с рефакторингом под CSS Modules там, где это оправдано.
+Стили из `src/styles/` SHALL быть перенесены в соответствующие FSD-слои внутри `apps/web/` с рефакторингом на Tailwind CSS v4 (токены Ventura Mono).
 
-#### Scenario: Перенос MainSection.scss
+#### Scenario: Перенос стилей Home
 
 - **WHEN** компонент Home перенесён в `apps/web/src/widgets/home/`
-- **THEN** `MainSection.scss` расположен рядом с компонентом Home
+- **THEN** легаси-стили из `src/styles/` переписаны на утилитарные классы Tailwind рядом с компонентом Home
 
 ### Requirement: Исключение CRA-артефактов
 
-CRA-специфичные файлы (setupTests.ts с ошибкой двойного импорта en-переводов, reportWebVitals, CRA-шаблон public/index.html) SHALL быть исключены из миграции.
+CRA-специфичные и шаблонные файлы SHALL быть исключены из миграции и удалены из `apps/web`:
+
+- `setupTests.ts` (ошибка двойного импорта en-переводов)
+- `reportWebVitals`, CRA-шаблон `public/index.html`
+- `app/page.module.css` — мёртвый turborepo-шаблон, не импортируется
+- Geist-шрифты (`app/fonts/GeistVF.woff`, `GeistMonoVF.woff`) — заменены на Hanken Grotesk / Inter / JetBrains Mono из Google Fonts
+- Легаси SVG-ассеты (`public/*.svg`: vercel, next, globe, window, file-text, turborepo-dark, turborepo-light)
 
 #### Scenario: Сборка Next.js
 
 - **WHEN** выполняется `next build` в apps/web
-- **THEN** CRA-артефакты не участвуют в сборке и не включены в исходный код Next.js приложения
+- **THEN** CRA-артефакты и шаблонные файлы не участвуют в сборке и не включены в исходный код Next.js приложения
+- **AND** шрифты и стили наследуются из `globals.css` (токены Ventura Mono)

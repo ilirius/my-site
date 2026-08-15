@@ -60,14 +60,14 @@ pixel-and-code/
 
 #### Scenario: Импорт UI-компонента
 
-- **WHEN** компонент в apps/web импортирует `@repo/ui/button.tsx`
-- **THEN** используется атомарный компонент Button из пакета @repo/ui
+- **WHEN** компонент в apps/web импортирует атом из `@repo/ui`
+- **THEN** используется атомарный компонент из пакета @repo/ui (путь задаётся через `exports` в `packages/ui/package.json`)
 
-### Requirement: SCSS и CSS Modules для стилей
+### Requirement: Tailwind CSS для стилей
 
-Стили SHALL храниться рядом с компонентами (colocation) в форматах SCSS и CSS Modules. Глобальные стили — в `src/styles/`.
+Стили SHALL храниться рядом с компонентами (colocation) с использованием утилитарных классов Tailwind CSS v4 и токенов Ventura Mono из `@repo/config-tailwind`.
 
 #### Scenario: Стили компонента
 
-- **WHEN** компонент находится в `shared/ui/`
-- **THEN** его стили лежат в том же каталоге, что и компонент
+- **WHEN** компонент находится в `packages/ui/src/`
+- **THEN** его стили задаются утилитарными классами Tailwind внутри JSX (colocation)
