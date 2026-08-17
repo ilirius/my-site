@@ -21,17 +21,17 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
 
-  /* ─── PRIMARY (macOS Accent #0a84ff) ─── */
-  --color-primary: #aac7ff;
-  --color-primary-container: #3e90ff;
-  --color-primary-fixed: #d6e3ff;
-  --color-primary-fixed-dim: #aac7ff;
-  --color-primary-on: #003064;
-  --color-primary-on-container: #002957;
-  --color-primary-on-fixed: #001b3e;
-  --color-primary-on-fixed-variant: #00468d;
-  --color-primary-inverse: #005db8;
-  --color-primary-accent: #0a84ff;
+  /* ─── PRIMARY (Kinetic Portfolio System teal #5eead4) ─── */
+  --color-primary: #5eead4;
+  --color-primary-container: #0d9488;
+  --color-primary-fixed: #99f6e4;
+  --color-primary-fixed-dim: #5eead4;
+  --color-primary-on: #003d33;
+  --color-primary-on-container: #052e2b;
+  --color-primary-on-fixed: #00201a;
+  --color-primary-on-fixed-variant: #0f766e;
+  --color-primary-inverse: #14b8a6;
+  --color-primary-accent: #5eead4;
 
   /* ─── SECONDARY (#5e5ce6) ─── */
   --color-secondary: #c2c1ff;
@@ -59,21 +59,21 @@
   --color-error-on: #690005;
   --color-error-on-container: #ffdad6;
 
-  /* ─── SURFACE (Dark 8-step elevation ramp) ─── */
-  --color-surface: #131313;
-  --color-surface-dim: #131313;
-  --color-surface-bright: #393939;
-  --color-surface-container-lowest: #0e0e0e;
-  --color-surface-container-low: #1b1b1c;
-  --color-surface-container: #202020;
-  --color-surface-container-high: #2a2a2a;
-  --color-surface-container-highest: #353535;
-  --color-surface-variant: #353535;
-  --color-surface-tint: #aac7ff;
-  --color-surface-on: #e5e2e1;
-  --color-surface-on-variant: #c0c6d6;
-  --color-surface-inverse: #e5e2e1;
-  --color-surface-inverse-on: #303030;
+  /* ─── SURFACE (Dark — Kinetic #0b1326 base) ─── */
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #1e293b;
+  --color-surface-container-lowest: #060b18;
+  --color-surface-container-low: #0f1b33;
+  --color-surface-container: #152238;
+  --color-surface-container-high: #1c2c47;
+  --color-surface-container-highest: #243652;
+  --color-surface-variant: #243652;
+  --color-surface-tint: #5eead4;
+  --color-surface-on: #e2e8f0;
+  --color-surface-on-variant: #94a3b8;
+  --color-surface-inverse: #e2e8f0;
+  --color-surface-inverse-on: #0f1b33;
 
   /* ─── OUTLINE ─── */
   --color-outline: #8b91a0;
@@ -82,7 +82,7 @@
   /* ─── GLASSMORPHISM ─── */
   --color-glass-white: rgba(255, 255, 255, 0.1);
   --color-glass-black: rgba(0, 0, 0, 0.05);
-  --color-glass-accent: rgba(10, 132, 255, 0.15);
+  --color-glass-accent: rgba(94, 234, 212, 0.15);
 
   /* ─── BORDER RADIUS (ROUND_EIGHT) ─── */
   --radius-sm: 0.25rem;
@@ -94,7 +94,7 @@
   --radius-full: 9999px;
 
   /* ─── SHADOWS ─── */
-  --shadow-glow-primary: 0 0 40px 0 rgba(10, 132, 255, 0.15);
+  --shadow-glow-primary: 0 0 40px 0 rgba(94, 234, 212, 0.15);
   --shadow-glow-secondary: 0 0 40px 0 rgba(94, 92, 230, 0.15);
   --shadow-modal: 0 10px 30px rgba(0, 0, 0, 0.2);
   --shadow-magnetic: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -123,11 +123,11 @@
 @keyframes magnetic-lift {
   0% {
     transform: translateY(0);
-    box-shadow: 0 0 0 0 rgba(10, 132, 255, 0);
+    box-shadow: 0 0 0 0 rgba(94, 234, 212, 0);
   }
   100% {
     transform: translateY(-4px);
-    box-shadow: 0 0 40px 0 rgba(10, 132, 255, 0.15);
+    box-shadow: 0 0 40px 0 rgba(94, 234, 212, 0.15);
   }
 }
 

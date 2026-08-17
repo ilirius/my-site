@@ -1,1 +1,1 @@
-export { NavLinks } from "./NavLinks";
+export { NavigationShell } from "./NavigationShell";

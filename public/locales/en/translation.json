@@ -1,11 +1,11 @@
 {
   "myName": "Ivan Gavrilov",
   "mainMenu": {
-    "home": "Home",
-    "about": "Who am I?",
-    "contact": "Contact",
-    "skills": "What can I do?",
-    "portfolio": "What have I done?"
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "techStack": "Tech Stack",
+    "contact": "Contact"
   },
   "home": {
     "title": "Personal page of Ivan Gavrilov",
@@ -16,15 +16,15 @@
     }
   },
   "about": {
-    "title": "Who am I? | personal page of Ivan Gavrilov",
+    "title": "About | personal page of Ivan Gavrilov",
     "description": "",
-    "pageHeader": "Who am I?",
+    "pageHeader": "About",
     "article": {
-      "part1": "Я - Front-End Developer из Санкт-Петербурга, Россия.",
-      "part2": "Серьезно увлекаюсь эффектами пользовательского интерфейса, анимацией и созданием интуитивно понятного, динамичного пользовательского интерфейса, а так же люблю интересные и сложные задачи."
+      "part1": "I am a Front-End Developer from Saint Petersburg, Russia.",
+      "part2": "I am passionate about UI effects, animation, and building intuitive, dynamic user interfaces, and I enjoy interesting and complex challenges."
     },
     "article3": {
-      "part1": "У Вас есть интересный проект? Давайте реализуем его вместе!"
+      "part1": "Have an interesting project? Let's build it together!"
     },
     "tags": {
       "Programming": "Programming",
@@ -37,6 +37,26 @@
       "Design": "Design",
       "Photography": "Photography",
       "Mythology": "Mythology"
+    }
+  },
+  "experience": {
+    "title": "Experience | personal page of Ivan Gavrilov",
+    "pageHeader": "Experience"
+  },
+  "projects": {
+    "title": "Projects | personal page of Ivan Gavrilov",
+    "pageHeader": "Projects"
+  },
+  "techStack": {
+    "title": "Tech Stack | personal page of Ivan Gavrilov",
+    "pageHeader": "Tech Stack"
+  },
+  "contact": {
+    "title": "Contact | personal page of Ivan Gavrilov",
+    "description": "",
+    "pageHeader": "Contact",
+    "article": {
+      "part1": "<0>Hi, I'm</0> Ivan Gavrilov"
     }
   }
 }

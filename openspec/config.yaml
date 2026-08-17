@@ -8,7 +8,7 @@ context: |
 
   ## Технический стек
   - Монорепо: Turborepo + pnpm workspaces
-  - Приложение портфолио: Next.js 16 (SSG как SPA, одна страница с якорными секциями: Hero, About, Skills, Portfolio, Contact)
+  - Приложение портфолио: Next.js 16 (SSG как SPA, одна страница с якорными секциями: Hero, About, Experience, Projects, Tech Stack, Contact)
   - Документация компонентов: Storybook в apps/docs (с @storybook/nextjs)
   - Язык: TypeScript 5 (strict: true)
   - UI: React 19
@@ -32,30 +32,32 @@ context: |
 
   ## Роутинг
   - Next.js App Router. Единственный маршрут: / (app/page.tsx)
-  - Секции: Hero, #about, #skills, #portfolio, #contact
+  - Секции: Hero, #about, #experience, #projects, #tech-stack, #contact
   - Якорная навигация с плавным скроллом (scroll-behavior: smooth, History API)
   - 404: кастомная страница not-found
 
   ## Интернационализация
   - Языки: русский (ru), английский (en)
   - Автоопределение: localStorage (i18nextLng) → sessionStorage → fallback ru
-  - UI-переключатель: macOS-toggle (атом из @repo/ui) RU/EN
+  - UI-переключатель: чипы RU/EN в шторке настроек (Android 17 / Material You)
   - В Storybook: локальный I18nContext (заглушка, не зависящая от i18next)
   - Поддержка <Trans> для HTML-разметки в переводах
 
   ## Темы
-  - Dark (по умолчанию) / Light — соответствует манифесту Stitch "Silicon Desktop"
+  - Три режима: Dark (по умолчанию), Light, System — соответствует манифесту Stitch "Kinetic Portfolio System"
   - Переключение через CSS-класс .dark на html
   - CSS-селекторы: .dark + color-scheme: dark/light
-  - UI: macOS-toggle (pill-трек + круглый thumb, spring-анимация)
+  - Резолв System через prefers-color-scheme
+  - UI: сегментный переключатель (Light/Dark/System) в шторке настроек
 
   ## План миграции (src/ → apps/web/)
   1. Создать каркас SPA с секциями-заглушками и якорной навигацией
   2. Hero
   3. About
-  4. Skills
-  5. Portfolio
-  6. Contact
+  4. Experience
+  5. Projects
+  6. Tech Stack
+  7. Contact
   + Перенос i18n: public/locales/ → apps/web/public/locales/
   + Перенос стилей на Tailwind CSS v4 (токены Ventura Mono)
   + Исключить CRA-артефакты (setupTests.ts, reportWebVitals, public/index.html)

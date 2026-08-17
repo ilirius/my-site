@@ -4,7 +4,6 @@ import React, {
   useContext,
   useEffect,
   useState,
-  useCallback,
 } from "react";
 import "../app/globals.css";
 
@@ -29,13 +28,15 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.greeting": "Привет, я Иван",
     "hero.role": "Front-End Developer",
     "hero.cta": "Смотреть работы",
-    "nav.home": "Главная",
-    "nav.about": "О себе",
-    "nav.portfolio": "Портфолио",
-    "nav.skills": "Навыки",
+    "nav.about": "Обо мне",
+    "nav.experience": "Опыт",
+    "nav.projects": "Проекты",
+    "nav.techStack": "Тех стек",
     "nav.contact": "Контакты",
+    "nav.settings": "Настройки",
     "theme.light": "Светлая тема",
     "theme.dark": "Тёмная тема",
+    "theme.system": "Системная тема",
     "lang.ru": "Русский",
     "lang.en": "English",
   },
@@ -43,13 +44,15 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.greeting": "Hi, I'm Ivan",
     "hero.role": "Front-End Developer",
     "hero.cta": "View Projects",
-    "nav.home": "Home",
     "nav.about": "About",
-    "nav.portfolio": "Portfolio",
-    "nav.skills": "Skills",
+    "nav.experience": "Experience",
+    "nav.projects": "Projects",
+    "nav.techStack": "Tech Stack",
     "nav.contact": "Contact",
+    "nav.settings": "Settings",
     "theme.light": "Light Theme",
     "theme.dark": "Dark Theme",
+    "theme.system": "System Theme",
     "lang.ru": "Русский",
     "lang.en": "English",
   },
@@ -75,7 +78,7 @@ export const useI18n = () => useContext(I18nContext);
 // Декоратор 1: Тема (Dark / Light через .dark)
 // ════════════════════════════════════════════════
 
-const ThemeDecorator = (Story: React.FC, context: Record<string, any>) => {
+const ThemeDecorator = (Story: React.FC, context: { globals?: { theme?: string } }) => {
   const themeFromToolbar = context.globals?.theme ?? "dark";
 
   useEffect(() => {
@@ -83,21 +86,35 @@ const ThemeDecorator = (Story: React.FC, context: Record<string, any>) => {
     if (themeFromToolbar === "dark") {
       el.classList.add("dark");
       el.style.colorScheme = "dark";
-    } else {
+    } else if (themeFromToolbar === "light") {
       el.classList.remove("dark");
       el.style.colorScheme = "light";
+    } else {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (prefersDark) {
+        el.classList.add("dark");
+        el.style.colorScheme = "dark";
+      } else {
+        el.classList.remove("dark");
+        el.style.colorScheme = "light";
+      }
     }
   }, [themeFromToolbar]);
 
-  const isDark = themeFromToolbar === "dark";
+  const isDark =
+    themeFromToolbar === "dark" ||
+    (themeFromToolbar === "system" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   return (
     <div
       className={isDark ? "dark" : ""}
       style={{
         minHeight: "100vh",
-        background: isDark ? "#131313" : "#f5f5f7",
-        color: isDark ? "#e5e2e1" : "#1e1e1e",
+        background: isDark ? "#0b1326" : "#f8fafc",
+        color: isDark ? "#e2e8f0" : "#1e1e1e",
         fontFamily:
           "var(--font-body, 'Inter', system-ui, -apple-system, sans-serif)",
         transition: "background-color 400ms cubic-bezier(0.4, 0, 0.2, 1)",
@@ -112,7 +129,7 @@ const ThemeDecorator = (Story: React.FC, context: Record<string, any>) => {
 // Декоратор 2: i18n (RU / EN переключатель)
 // ════════════════════════════════════════════════
 
-const I18nDecorator = (Story: React.FC, context: Record<string, any>) => {
+const I18nDecorator = (Story: React.FC, context: { globals?: { locale?: string } }) => {
   const localeFromToolbar = (context.globals?.locale as Locale) ?? "ru";
   const [locale, setLocale] = useState<Locale>(localeFromToolbar);
 
@@ -152,10 +169,10 @@ const preview: Preview = {
     backgrounds: {
       default: "dark",
       values: [
-        { name: "Dark (surface)", value: "#131313" },
-        { name: "Light (aluminium)", value: "#f5f5f7" },
-        { name: "Surface Container", value: "#202020" },
-        { name: "Surface Lowest", value: "#0e0e0e" },
+        { name: "Dark (Kinetic)", value: "#0b1326" },
+        { name: "Light (aluminium)", value: "#f8fafc" },
+        { name: "Surface Container", value: "#152238" },
+        { name: "Surface Lowest", value: "#060b18" },
       ],
     },
 
@@ -186,6 +203,7 @@ const preview: Preview = {
         items: [
           { value: "dark", title: "🌙 Тёмная (Dark)", left: "🌙" },
           { value: "light", title: "☀️ Светлая (Light)", left: "☀️" },
+          { value: "system", title: "🖥️ Системная (System)", left: "🖥️" },
         ],
         dynamicTitle: true,
       },

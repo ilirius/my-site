@@ -1,4 +1,4 @@
-import { NavLinks } from "@/src/widgets/navigation";
+import { NavigationShell } from "@/src/widgets/navigation";
 
 function SectionStub({ id, title, isHero }: { id: string; title: string; isHero?: boolean }) {
   const Tag = isHero ? "header" : "section";
@@ -33,12 +33,17 @@ function SectionStub({ id, title, isHero }: { id: string; title: string; isHero?
 export default function Home() {
   return (
     <>
-      <NavLinks />
-      <SectionStub id="home" title="Pixel & Code" isHero />
-      <SectionStub id="about" title="Обо мне" />
-      <SectionStub id="skills" title="Навыки" />
-      <SectionStub id="portfolio" title="Портфолио" />
-      <SectionStub id="contact" title="Контакты" />
+      <NavigationShell />
+      {/* Адаптивный контейнер: десктоп центрируется и сдвигается от VerticalDock,
+          мобильный учитывает нижний safe-area под BottomNavBar. */}
+      <main className="mx-auto max-w-[1200px] pr-0 pb-24 md:pr-[100px]">
+        <SectionStub id="home" title="Pixel & Code" isHero />
+        <SectionStub id="about" title="Обо мне" />
+        <SectionStub id="experience" title="Опыт" />
+        <SectionStub id="projects" title="Проекты" />
+        <SectionStub id="tech-stack" title="Технологический стек" />
+        <SectionStub id="contact" title="Контакты" />
+      </main>
     </>
   );
 }

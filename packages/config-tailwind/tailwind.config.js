@@ -21,18 +21,18 @@ const config = {
   theme: {
     // ─── COLOR PALETTE (Material Design 3 + macOS Silicon Desktop) ───
     colors: {
-      // ▸ Primary — #0a84ff (macOS Accent Blue)
+      // ▸ Primary — #5eead4 (Kinetic Portfolio System teal)
       primary: {
-        DEFAULT: '#aac7ff',          // on-dark primary
-        container: '#3e90ff',        // primary-container
-        fixed: '#d6e3ff',            // primary-fixed
-        'fixed-dim': '#aac7ff',      // primary-fixed-dim
-        on: '#003064',               // on-primary
-        'on-container': '#002957',    // on-primary-container
-        'on-fixed': '#001b3e',       // on-primary-fixed
-        'on-fixed-variant': '#00468d',// on-primary-fixed-variant
-        inverse: '#005db8',          // inverse-primary
-        accent: '#0a84ff',           // override-primary (macOS accent)
+        DEFAULT: '#5eead4',
+        container: '#0d9488',
+        fixed: '#99f6e4',
+        'fixed-dim': '#5eead4',
+        on: '#003d33',
+        'on-container': '#052e2b',
+        'on-fixed': '#00201a',
+        'on-fixed-variant': '#0f766e',
+        inverse: '#14b8a6',
+        accent: '#5eead4',
       },
 
       // ▸ Secondary — #5e5ce6 (override-secondary)
@@ -67,22 +67,22 @@ const config = {
         'on-container': '#ffdad6',
       },
 
-      // ▸ Surface hierarchy (Dark Mode — 8-step elevation ramp)
+      // ▸ Surface hierarchy (Dark Mode — Kinetic #0b1326 base)
       surface: {
-        DEFAULT: '#131313',                 // surface (also root background)
-        dim: '#131313',                     // surface-dim
-        bright: '#393939',                  // surface-bright
-        'container-lowest': '#0e0e0e',       // surface-container-lowest
-        'container-low': '#1b1b1c',          // surface-container-low
-        'container': '#202020',              // surface-container
-        'container-high': '#2a2a2a',         // surface-container-high
-        'container-highest': '#353535',      // surface-container-highest
-        variant: '#353535',                  // surface-variant
-        tint: '#aac7ff',                     // surface-tint
-        on: '#e5e2e1',                       // on-surface / on-background
-        'on-variant': '#c0c6d6',             // on-surface-variant
-        inverse: '#e5e2e1',                  // inverse-surface
-        'inverse-on': '#303030',             // inverse-on-surface
+        DEFAULT: '#0b1326',
+        dim: '#0b1326',
+        bright: '#1e293b',
+        'container-lowest': '#060b18',
+        'container-low': '#0f1b33',
+        'container': '#152238',
+        'container-high': '#1c2c47',
+        'container-highest': '#243652',
+        variant: '#243652',
+        tint: '#5eead4',
+        on: '#e2e8f0',
+        'on-variant': '#94a3b8',
+        inverse: '#e2e8f0',
+        'inverse-on': '#0f1b33',
       },
 
       // ▸ Outline (MD3 — inherently flat, 2 values)
@@ -114,7 +114,7 @@ const config = {
       glass: {
         white: 'rgba(255, 255, 255, 0.10)',
         black: 'rgba(0, 0, 0, 0.05)',
-        accent: 'rgba(10, 132, 255, 0.15)',
+        accent: 'rgba(94, 234, 212, 0.15)',
       },
     },
 
@@ -305,7 +305,7 @@ const config = {
     boxShadow: {
       none: 'none',
       // Glassmorphic glow
-      'glow-primary': '0 0 40px 0 rgba(10, 132, 255, 0.15)',
+      'glow-primary': '0 0 40px 0 rgba(94, 234, 212, 0.15)',
       'glow-secondary': '0 0 40px 0 rgba(94, 92, 230, 0.15)',
       // Modal / Popover
       modal: '0 10px 30px rgba(0, 0, 0, 0.2)',
@@ -380,8 +380,8 @@ const config = {
       // ─── CUSTOM ANIMATIONS ───
       keyframes: {
         'magnetic-lift': {
-          '0%': { transform: 'translateY(0)', boxShadow: '0 0 0 0 rgba(10, 132, 255, 0)' },
-          '100%': { transform: 'translateY(-4px)', boxShadow: '0 0 40px 0 rgba(10, 132, 255, 0.15)' },
+          '0%': { transform: 'translateY(0)', boxShadow: '0 0 0 0 rgba(94, 234, 212, 0)' },
+          '100%': { transform: 'translateY(-4px)', boxShadow: '0 0 40px 0 rgba(94, 234, 212, 0.15)' },
         },
         'scan-line': {
           '0%': { transform: 'translateX(-100%)' },

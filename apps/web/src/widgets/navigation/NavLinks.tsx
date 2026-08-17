@@ -1,8 +1,8 @@
 const sections = [
-  { id: "home", label: "Home" },
   { id: "about", label: "Обо мне" },
-  { id: "skills", label: "Навыки" },
-  { id: "portfolio", label: "Портфолио" },
+  { id: "experience", label: "Опыт" },
+  { id: "projects", label: "Проекты" },
+  { id: "tech-stack", label: "Технологический стек" },
   { id: "contact", label: "Контакты" },
 ] as const;
 
@@ -33,7 +33,7 @@ export function NavLinks() {
         {sections.map((s) => (
           <li key={s.id}>
             <a
-              href={`/#${s.id === "home" ? "" : s.id}`}
+              href={`/#${s.id}`}
               style={{
                 color: "inherit",
                 fontSize: "1rem",

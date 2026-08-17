@@ -14,6 +14,8 @@ const config: StorybookConfig = {
   stories: [
     "../../../packages/ui/src/**/*.mdx",
     "../../../packages/ui/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../src/stories/**/*.mdx",
+    "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
 
   addons: [
@@ -45,7 +47,7 @@ const config: StorybookConfig = {
           __dirname,
           "../../../packages/config-tailwind",
         ),
-        "@repo/ui": path.resolve(__dirname, "../../../packages/ui"),
+        "@repo/ui": path.resolve(__dirname, "../../../packages/ui/src/index.ts"),
       });
     }
     return config;

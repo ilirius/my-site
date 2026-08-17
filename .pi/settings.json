@@ -1,14 +1,11 @@
 {
-  "ignorePatterns": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/build/**",
-    "**/.git/**",
-    "**/.venv/**"
-  ],
   "compaction": {
+    "enabled": false
+  },
+  "observational-memory": {
     "enabled": true,
-    "reserveTokens": 16384,
-    "keepRecentTokens": 50000
+    "observeAfterTokens": 20000,
+    "compactAfterTokens": 50000,
+    "thinking": "medium"
   }
 }
